@@ -18,16 +18,23 @@
 </head>
 <body>
     <h1>hello world</h1>
-    <button onclick="sendData()">send data</button>
+    <input class="name-input" placeholder="Name" type="text">
+    <button  onclick="sendData()">send data</button>
     <script>
-        const data = {
-            name: 'baber',
-            specie: 'animal',
-            age: 3,
-    }
+            
+            // {
+    //         name: 'baber',
+    //         specie: 'animal',
+    //         age: 3,
+    // }
     function sendData(){
+        const inputHtml = document.querySelector('.name-input')
+        const inputValue = inputHtml.value;
+        console.log(inputValue)
+        const data = {name : `${inputValue}`}
+        console.log(data)
         console.log('Function is activated')
-        fetch('http://localhost:3000/api/sendData',{
+        fetch('/api/sendData',{
         method:'POST',
         headers:{
             'Content-type':'application/json',

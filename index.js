@@ -4,7 +4,7 @@ const apiRoutes = require('./routes/apiRoutes');
 const fs = require('fs');
 app.use(express.json());
 app.use(express.urlencoded( { extended: true } ));
-
+''
 app.get('/',(req,res) => {
     fs.readFile('./test.html','utf8',(err,data) => {
         if (err){
